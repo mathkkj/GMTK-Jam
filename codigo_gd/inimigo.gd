@@ -3,7 +3,7 @@ class_name Inimigos
 
 @onready var alvo = get_parent().get_node("player")
 @onready var sprite = get_node("sprite")
-
+@onready var hurtbox = get_node("hurtbox")
 @export var vida = 12
 
 @export var velocidade := 150.0
@@ -51,6 +51,7 @@ func receber_dano(dano_recebido, direcao_knockback, forca):
 
 	if vida <= 0:
 		queue_free()
+		Global.tempo += 10
 
 
 
@@ -81,3 +82,18 @@ func empurrar_inimigos_colididos() -> void:
 			#receba 0 de dano
 			outro.receber_dano(0,direcao_empurrao, forca_knockback * 1.2) 
 			
+
+func _on_dano_continuo_timeout() -> void:
+	#isso daq é pra dar dano se eu continuar encostando nele
+	if !pode_dar_dano:
+		return
+	for body in hurtbox.get_overlapping_bodies():
+		if body.is_in_group("player") and !body.invencivel:
+			pode_dar_dano = false
+
+			var dir = (body.global_position - global_position).normalized()
+			body.receber_dano(dano, dir, 500)
+
+			await get_tree().create_timer(0.3).timeout
+			pode_dar_dano = true
+			break

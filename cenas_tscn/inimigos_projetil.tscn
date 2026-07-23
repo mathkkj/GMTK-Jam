@@ -43,7 +43,7 @@ animations = [{
 size = Vector2(28, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7huev"]
-size = Vector2(30.000002, 36.000004)
+size = Vector2(34, 36.000004)
 
 [node name="Inimigos_projetil" type="CharacterBody2D" unique_id=403934164 groups=["inimigos"]]
 motion_mode = 1
@@ -66,9 +66,13 @@ shape = SubResource("RectangleShape2D_g53b7")
 [node name="hurtbox" type="Area2D" parent="." unique_id=273147852 groups=["inimigos"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1698737325 groups=["inimigos"]]
-position = Vector2(1.0000008, -0.9999981)
+position = Vector2(0.9999995, -0.9999981)
 scale = Vector2(0.9999998, 0.9999998)
 shape = SubResource("RectangleShape2D_7huev")
+
+[node name="dano_continuo" type="Timer" parent="." unique_id=1232898197]
+wait_time = 0.5
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

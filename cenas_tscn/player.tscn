@@ -192,8 +192,10 @@ size = Vector2(16.6812, 21.915142)
 scale = Vector2(0.8392682, 0.8392682)
 motion_mode = 1
 script = ExtResource("1_4flbx")
-DASH_TIMER = 0.25
-armas = Array[PackedScene]([ExtResource("3_i3pqv"), ExtResource("3_hqtel")])
+dash_vel = 550.0
+atrito_dash = 8000.0
+DASH_TIMER = 0.4
+armas = Array[PackedScene]([ExtResource("3_hqtel"), ExtResource("3_i3pqv")])
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=688098043 groups=["player"]]
 position = Vector2(1.4203957e-07, 7.1490855)
