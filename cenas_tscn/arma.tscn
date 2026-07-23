@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cfdwjgx0mqnmt"]
+
+[ext_resource type="Script" uid="uid://b2hqotwsnjlxt" path="res://codigo_gd/revolver.gd" id="1_uya3a"]
+[ext_resource type="Texture2D" uid="uid://dyehiep3mjhlx" path="res://sprites/Gun.png" id="2_bftl6"]
+
+[node name="arma" type="Node2D" unique_id=1898825399 groups=["player"]]
+script = ExtResource("1_uya3a")
+distancia_arma = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=584548681]
+position = Vector2(10, -4)
+texture = ExtResource("2_bftl6")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=2135042384]
+position = Vector2(24, -5)

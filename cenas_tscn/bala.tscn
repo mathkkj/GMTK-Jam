@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://8uyljrl62gae"]
+
+[ext_resource type="Script" uid="uid://b7lio2osluyp0" path="res://codigo_gd/bala.gd" id="1_ag3k0"]
+[ext_resource type="Texture2D" uid="uid://dhne402hxktc0" path="res://sprites/Bullet.png" id="2_tqo1u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 7.071068
+
+[node name="bala" type="Node2D" unique_id=1371030625 groups=["bala"]]
+script = ExtResource("1_ag3k0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=657373693 groups=["bala"]]
+texture = ExtResource("2_tqo1u")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1215106603 groups=["bala"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=988331074 groups=["bala"]]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_g4v7s")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

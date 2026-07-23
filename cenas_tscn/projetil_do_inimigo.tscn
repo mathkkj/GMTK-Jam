@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://b6yn2sbrjyqqd"]
+
+[ext_resource type="Script" uid="uid://15mg7tu6tkte" path="res://codigo_gd/projetil_do_inimigo.gd" id="1_r1kfp"]
+[ext_resource type="Texture2D" uid="uid://dhne402hxktc0" path="res://sprites/Bullet.png" id="2_10u86"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 8.0
+
+[node name="projetil_do_inimigo" type="Node2D" unique_id=728065562]
+script = ExtResource("1_r1kfp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=501385095]
+modulate = Color(0.18815547, 0.00015208113, 0.2556428, 1)
+texture = ExtResource("2_10u86")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1170617016]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=708060641]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_g4v7s")
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="body_entered" from="hurtbox" to="." method="_on_area_2d_body_entered"]

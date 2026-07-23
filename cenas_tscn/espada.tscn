@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://bqreysdobic5k"]
+
+[ext_resource type="Script" uid="uid://b0nd4giirjpx1" path="res://codigo_gd/espada.gd" id="1_5xcw1"]
+[ext_resource type="Texture2D" uid="uid://da07cjkh4hhn2" path="res://sprites/Sword-Sheet.png" id="2_olrou"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_740t4"]
+atlas = ExtResource("2_olrou")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xvmcj"]
+atlas = ExtResource("2_olrou")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tc2h"]
+atlas = ExtResource("2_olrou")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrxb8"]
+atlas = ExtResource("2_olrou")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h30wq"]
+atlas = ExtResource("2_olrou")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_740t4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xvmcj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tc2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrxb8")
+}],
+"loop": 1,
+"name": &"atacando",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h30wq")
+}],
+"loop": 1,
+"name": &"normal",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5xcw1"]
+radius = 14.0
+height = 41.0
+
+[node name="espada" type="Node2D" unique_id=22527333 groups=["espada"]]
+script = ExtResource("1_5xcw1")
+distancia_arma = 10.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=515487160 groups=["espada"]]
+position = Vector2(13, -1)
+rotation = 1.5707964
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+animation = &"normal"
+autoplay = "normal"
+
+[node name="hitbox" type="Area2D" parent="." unique_id=66876000 groups=["espada"]]
+collision_layer = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=375386879 groups=["espada"]]
+position = Vector2(18, -4)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_5xcw1")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]

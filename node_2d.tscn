@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://covp7b2n04uk2"]
+
+[ext_resource type="PackedScene" uid="uid://b8243cheofnhi" path="res://cenas_tscn/player.tscn" id="1_0hol4"]
+[ext_resource type="Script" uid="uid://dpwi8fkw3dtta" path="res://codigo_gd/camera_2d.gd" id="1_epypp"]
+[ext_resource type="Script" uid="uid://ddku84syeac2p" path="res://codigo_gd/global.gd" id="1_q6r6c"]
+[ext_resource type="PackedScene" uid="uid://co4j3hdsx53v1" path="res://cenas_tscn/inimigo.tscn" id="4_q6r6c"]
+[ext_resource type="Script" uid="uid://d0kbebn2m8rqt" path="res://codigo_gd/canvaslayer.gd" id="5_kdubu"]
+[ext_resource type="Script" uid="uid://bye3t7yqsudvi" path="res://codigo_gd/label.gd" id="6_kdubu"]
+[ext_resource type="PackedScene" uid="uid://v6n0qmfibyvh" path="res://cenas_tscn/inimigos_projetil.tscn" id="7_d21ai"]
+
+[node name="Node2D" type="Node2D" unique_id=2017904224]
+script = ExtResource("1_q6r6c")
+
+[node name="player" parent="." unique_id=290254226 instance=ExtResource("1_0hol4")]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1289913721 node_paths=PackedStringArray("personagem")]
+position_smoothing_enabled = true
+script = ExtResource("1_epypp")
+personagem = NodePath("../player")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=240291162]
+script = ExtResource("5_kdubu")
+
+[node name="tempo" type="Label" parent="CanvasLayer" unique_id=531325995]
+offset_right = 90.0
+offset_bottom = 23.0
+size_flags_horizontal = 4
+text = "timer: "
+script = ExtResource("6_kdubu")
+
+[node name="arma" type="Label" parent="CanvasLayer" unique_id=171101099]
+offset_left = 4.0
+offset_top = 246.0
+offset_right = 44.0
+offset_bottom = 269.0
+text = "sla"
+
+[node name="inimigo" parent="." unique_id=2100569929 instance=ExtResource("4_q6r6c")]
+
+[node name="Inimigos_projetil" parent="." unique_id=403934164 instance=ExtResource("7_d21ai")]
+position = Vector2(-145, 14)

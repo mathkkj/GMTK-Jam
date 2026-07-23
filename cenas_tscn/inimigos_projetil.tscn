@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://v6n0qmfibyvh"]
+
+[ext_resource type="Script" uid="uid://bxmjpsfe3eim6" path="res://codigo_gd/inimigos_projetil.gd" id="1_g53b7"]
+[ext_resource type="Texture2D" uid="uid://wytx3tfj2hiv" path="res://sprites/Enemy2-Sheet.png" id="2_7huev"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mw4x8"]
+atlas = ExtResource("2_7huev")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sy27r"]
+atlas = ExtResource("2_7huev")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qawus"]
+atlas = ExtResource("2_7huev")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7luy6"]
+atlas = ExtResource("2_7huev")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4v7s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mw4x8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sy27r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qawus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7luy6")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g53b7"]
+size = Vector2(28, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7huev"]
+size = Vector2(30.000002, 36.000004)
+
+[node name="Inimigos_projetil" type="CharacterBody2D" unique_id=403934164 groups=["inimigos"]]
+motion_mode = 1
+script = ExtResource("1_g53b7")
+dano = 5
+metadata/_custom_type_script = "uid://c6nhix12qwwft"
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=185527856]
+sprite_frames = SubResource("SpriteFrames_g4v7s")
+
+[node name="Timer" type="Timer" parent="." unique_id=94053198]
+wait_time = 1.5
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=398413373 groups=["inimigos"]]
+position = Vector2(1, 2)
+scale = Vector2(0.9999999, 0.9999999)
+shape = SubResource("RectangleShape2D_g53b7")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=273147852 groups=["inimigos"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1698737325 groups=["inimigos"]]
+position = Vector2(1.0000008, -0.9999981)
+scale = Vector2(0.9999998, 0.9999998)
+shape = SubResource("RectangleShape2D_7huev")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
