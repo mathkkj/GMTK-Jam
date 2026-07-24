@@ -2,14 +2,6 @@ extends Node2D
 
 @onready var area_spawn: Node2D = $SpawnInimigo
 
-
-var cartas = {
-	
-	
-	
-	
-}
-
 var cooldown = 0.5
 var dano_bala = 3
 var dano_espada = 5

@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://br4vskyrgyheo" path="res://sprites/MC-Sheet.png" id="2_onrkg"]
 [ext_resource type="PackedScene" uid="uid://cfdwjgx0mqnmt" path="res://cenas_tscn/arma.tscn" id="3_hqtel"]
 [ext_resource type="PackedScene" uid="uid://bqreysdobic5k" path="res://cenas_tscn/espada.tscn" id="3_i3pqv"]
-[ext_resource type="Texture2D" uid="uid://b54moo2eccnp6" path="res://icon.svg" id="5_t5do6"]
 [ext_resource type="Script" uid="uid://c7n5afeyiw6bm" path="res://codigo_gd/control.gd" id="5_uo3cy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
@@ -190,9 +189,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(16.6812, 21.915142)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bhunq"]
-bg_color = Color(0.52641237, 0.19227654, 0.53396636, 0.38039216)
-
 [node name="player" type="CharacterBody2D" unique_id=290254226 groups=["player"]]
 scale = Vector2(0.8392682, 0.8392682)
 motion_mode = 1
@@ -264,40 +260,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "Quit"
 
-[node name="FundoCartas" type="PanelContainer" parent="CanvasLayer" unique_id=15292357]
-process_mode = 2
-visible = false
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_bhunq")
-
-[node name="Cartas" type="HBoxContainer" parent="CanvasLayer/FundoCartas" unique_id=749113930]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 10
-
-[node name="Carta1" type="TextureButton" parent="CanvasLayer/FundoCartas/Cartas" unique_id=55815286]
-layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("5_t5do6")
-stretch_mode = 0
-
-[node name="Carta2" type="TextureButton" parent="CanvasLayer/FundoCartas/Cartas" unique_id=277054303]
-layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("5_t5do6")
-stretch_mode = 0
-
-[node name="Carta3" type="TextureButton" parent="CanvasLayer/FundoCartas/Cartas" unique_id=1882373575]
-layout_mode = 2
-size_flags_horizontal = 4
-texture_normal = ExtResource("5_t5do6")
-stretch_mode = 0
-
 [node name="Control" type="Control" parent="." unique_id=141021441]
 process_mode = 2
 layout_mode = 3
@@ -307,4 +269,3 @@ offset_bottom = 40.0
 script = ExtResource("5_uo3cy")
 
 [connection signal="pressed" from="CanvasLayer/Fundo/VBoxContainer/Restart" to="Control" method="_on_restart_pressed"]
-[connection signal="pressed" from="CanvasLayer/Fundo/VBoxContainer/Quit" to="Control" method="_on_quit_pressed"]

@@ -1,5 +1,4 @@
 extends CanvasLayer
-
 @onready var label_tempo = get_node("tempo")
 @onready var label_arma = get_node("arma")
 

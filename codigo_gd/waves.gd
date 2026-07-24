@@ -1,7 +1,7 @@
 extends Marker2D
 
 var rodando_waves := false
-var wave_atual := 4
+var wave_atual := 0
 
 var lista_inimigos: Array[PackedScene] = [
 	preload("res://cenas_tscn/inimigo.tscn"),
