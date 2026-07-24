@@ -5,6 +5,7 @@ class_name Inimigos
 @onready var sprite = get_node("sprite")
 @onready var hurtbox = get_node("hurtbox")
 @export var vida = 12
+@export var tempo = 2
 
 @export var velocidade := 150.0
 @export var dano := 10
@@ -61,7 +62,7 @@ func receber_dano(dano_recebido, direcao_knockback, forca):
 
 	if vida <= 0:
 		queue_free()
-		Global.tempo += 10
+		Global.tempo += tempo
 
 
 

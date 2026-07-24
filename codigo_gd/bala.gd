@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var velocidade: float = 800.0
-@export var dano: int = 6
+@export var dano = Global.dano_bala
 @export var tempo_vida: float = 2.0
 
 var direcao: Vector2 = Vector2.ZERO

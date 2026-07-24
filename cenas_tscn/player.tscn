@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://br4vskyrgyheo" path="res://sprites/MC-Sheet.png" id="2_onrkg"]
 [ext_resource type="PackedScene" uid="uid://cfdwjgx0mqnmt" path="res://cenas_tscn/arma.tscn" id="3_hqtel"]
 [ext_resource type="PackedScene" uid="uid://bqreysdobic5k" path="res://cenas_tscn/espada.tscn" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://c7n5afeyiw6bm" path="res://codigo_gd/control.gd" id="5_uo3cy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(14.298171, 21.447254)
@@ -192,7 +193,8 @@ size = Vector2(16.6812, 21.915142)
 scale = Vector2(0.8392682, 0.8392682)
 motion_mode = 1
 script = ExtResource("1_4flbx")
-dash_vel = 550.0
+velocidade = 200.0
+dash_vel = 300.0
 atrito_dash = 8000.0
 DASH_TIMER = 0.4
 armas = Array[PackedScene]([ExtResource("3_hqtel"), ExtResource("3_i3pqv")])
@@ -208,6 +210,7 @@ animation = &"andar_baixo"
 autoplay = "idle_baixo"
 
 [node name="hitbox" type="Area2D" parent="." unique_id=337790864 groups=["player"]]
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=778478871 groups=["player"]]
 position = Vector2(-2.1305935e-07, 7.3830285)
@@ -218,3 +221,51 @@ position = Vector2(0, 9.532114)
 
 [node name="spawn_revolver" type="Marker2D" parent="." unique_id=299143365]
 position = Vector2(0, 3.5745428)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=464192056]
+
+[node name="Fundo" type="PanelContainer" parent="CanvasLayer" unique_id=1667937149]
+process_mode = 2
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Fundo" unique_id=817821068]
+process_mode = 2
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 15
+
+[node name="Label" type="Label" parent="CanvasLayer/Fundo/VBoxContainer" unique_id=1272665249]
+process_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Failure"
+
+[node name="Restart" type="Button" parent="CanvasLayer/Fundo/VBoxContainer" unique_id=1182299753]
+process_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Restart"
+
+[node name="Quit" type="Button" parent="CanvasLayer/Fundo/VBoxContainer" unique_id=1659899615]
+process_mode = 2
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Quit"
+
+[node name="Control" type="Control" parent="." unique_id=141021441]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("5_uo3cy")
+
+[connection signal="pressed" from="CanvasLayer/Fundo/VBoxContainer/Restart" to="Control" method="_on_restart_pressed"]

@@ -1,7 +1,7 @@
 extends Node2D
 class_name Armas
 
-@export var tempo_cooldown: float = 0.2
+@export var tempo_cooldown = Global.cooldown
 @export var distancia_arma: float = 25.0
 
 @onready var player = get_parent()

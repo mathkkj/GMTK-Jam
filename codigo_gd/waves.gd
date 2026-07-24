@@ -6,26 +6,182 @@ var wave_atual := 0
 var lista_inimigos: Array[PackedScene] = [
 	preload("res://cenas_tscn/inimigo.tscn"),
 	preload("res://cenas_tscn/inimigos_projetil.tscn"),
-	preload("res://cenas_tscn/inimigos_3.tscn")
+	preload("res://cenas_tscn/inimigos_3.tscn"),
+	preload("res://cenas_tscn/boss.tscn")
 ]
 
 # configuracao das waves
 var waves := [
 	{
-		"tempo_entre_spawns": 1.0,
+		#1
+		"tempo_entre_spawns": 1.5,
 		"inimigos": [
-			{"tipo": 0, "quantidade": 2}
+			{"tipo": 0, "quantidade": 3}
 		]
 	},
 	{
-		"tempo_entre_spawns": 1.0,
+		#2
+		"tempo_entre_spawns": 1.5,
 		"inimigos": [
-			{"tipo": 2, "quantidade": 1},
-			{"tipo": 1, "quantidade": 2}
+			{"tipo": 0, "quantidade": 5}
 		]
 	},
+	{
+		#3
+		"tempo_entre_spawns": 1.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 7}
+		]
+	},
+	{
+		#4
+		"tempo_entre_spawns": 1.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 9}
+		]
+	},
+	{
+		#5
+		"tempo_entre_spawns": 1.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 5},
+			{"tipo": 1, "quantidade": 3}
+		]
+	},
+	{
+		#6
+		"tempo_entre_spawns": 1.0,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 4},
+			{"tipo": 1, "quantidade": 4}
+		]
+	},
+	{
+		#7
+		"tempo_entre_spawns": 1.0,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 6},
+			{"tipo": 1, "quantidade": 4}
+		]
+	},
+	{
+		#8
+		"tempo_entre_spawns": 1.0,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 6},
+			{"tipo": 1, "quantidade": 8}
+		]
+	},
+	{
+		#9
+		"tempo_entre_spawns": 1.0,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 7},
+			{"tipo": 1, "quantidade": 7}
+		]
+	},
+	{
+		#10
+		"tempo_entre_spawns": 1.0,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 4},
+			{"tipo": 1, "quantidade": 4},
+			{"tipo": 2, "quantidade": 1}
+		]
+	},
+	{
+		#11
+		"tempo_entre_spawns": 0.7,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 5},
+			{"tipo": 1, "quantidade": 5},
+			{"tipo": 2, "quantidade": 1}
+		]
+	},
+	{
+		#12
+		"tempo_entre_spawns": 0.7,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 8},
+			{"tipo": 1, "quantidade": 5},
+			{"tipo": 2, "quantidade": 2}
+		]
+	},
+	{
+		#13
+		"tempo_entre_spawns": 0.7,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 9},
+			{"tipo": 1, "quantidade": 6},
+			{"tipo": 2, "quantidade": 2}
+		]
+	},
+	{
+		#14
+		"tempo_entre_spawns": 0.7,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 10},
+			{"tipo": 1, "quantidade": 5},
+			{"tipo": 2, "quantidade": 4}
+		]
+	},
+	{
+		#15
+		"tempo_entre_spawns": 0.7,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 5},
+			{"tipo": 1, "quantidade": 10},
+			{"tipo": 2, "quantidade": 4}
+		]
+	},
+	{
+		#16
+		"tempo_entre_spawns": 0.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 6},
+			{"tipo": 1, "quantidade": 6},
+			{"tipo": 2, "quantidade": 6}
+		]
+	},
+	{
+		#17
+		"tempo_entre_spawns": 0.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 8},
+			{"tipo": 1, "quantidade": 8},
+			{"tipo": 2, "quantidade": 6}
+		]
+	},
+	{
+		#18
+		"tempo_entre_spawns": 0.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 9},
+			{"tipo": 1, "quantidade": 9},
+			{"tipo": 2, "quantidade": 8}
+		]
+	},
+	{
+		#19
+		"tempo_entre_spawns": 0.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 10},
+			{"tipo": 1, "quantidade": 10},
+			{"tipo": 2, "quantidade": 8}
+		]
+	},
+	{
+		#20
+		"tempo_entre_spawns": 0.5,
+		"inimigos": [
+			{"tipo": 3, "quantidade": 1}
+		]
+	}
+	
 ]
 
+			#
+			#
 func _ready() -> void:
 	# espera um frame para garantir que a cena terminou de carregar
 	##fiquei maluco tentando entender pq o primeiro inimigo nao funcionava, mas era pq ele tava instanciando antes do frame inicial tmnc

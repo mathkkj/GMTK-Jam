@@ -3,19 +3,38 @@
 [ext_resource type="PackedScene" uid="uid://b8243cheofnhi" path="res://cenas_tscn/player.tscn" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://dpwi8fkw3dtta" path="res://codigo_gd/camera_2d.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://ddku84syeac2p" path="res://codigo_gd/global.gd" id="1_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://b54moo2eccnp6" path="res://icon.svg" id="2_d21ai"]
 [ext_resource type="Script" uid="uid://d0kbebn2m8rqt" path="res://codigo_gd/canvaslayer.gd" id="5_kdubu"]
 [ext_resource type="Script" uid="uid://ls2rm1g8c0ei" path="res://codigo_gd/waves.gd" id="6_d21ai"]
 [ext_resource type="Script" uid="uid://bye3t7yqsudvi" path="res://codigo_gd/label.gd" id="6_kdubu"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(551, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdubu"]
+size = Vector2(14, 345)
+
 [node name="Node2D" type="Node2D" unique_id=2017904224]
 script = ExtResource("1_q6r6c")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1489854110]
+z_index = -1
+position = Vector2(240.99998, 137.5)
+scale = Vector2(4.078125, 2.4609375)
+texture = ExtResource("2_d21ai")
+
 [node name="player" parent="." unique_id=290254226 instance=ExtResource("1_0hol4")]
-position = Vector2(56, 35)
+position = Vector2(240.00002, 126.000015)
 armas = null
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1289913721 node_paths=PackedStringArray("personagem")]
+position = Vector2(240, 134)
+limit_left = -14
+limit_top = -38
+limit_right = 496
+limit_bottom = 312
 position_smoothing_enabled = true
+position_smoothing_speed = 1.0
 script = ExtResource("1_epypp")
 personagem = NodePath("../player")
 
@@ -37,4 +56,24 @@ offset_bottom = 269.0
 text = "sla"
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=40708363]
+position = Vector2(239, -53)
 script = ExtResource("6_d21ai")
+
+[node name="Wall" type="StaticBody2D" parent="." unique_id=1187663262]
+position = Vector2(234, 280)
+
+[node name="Collision" type="CollisionShape2D" parent="Wall" unique_id=1178952343]
+position = Vector2(9, 23.5)
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="Collision2" type="CollisionShape2D" parent="Wall" unique_id=1957256106]
+position = Vector2(3.5, -309)
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="Collision3" type="CollisionShape2D" parent="Wall" unique_id=1755362610]
+position = Vector2(275, -145)
+shape = SubResource("RectangleShape2D_kdubu")
+
+[node name="Collision4" type="CollisionShape2D" parent="Wall" unique_id=526088843]
+position = Vector2(-261, -145)
+shape = SubResource("RectangleShape2D_kdubu")

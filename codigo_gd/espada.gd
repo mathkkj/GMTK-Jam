@@ -6,7 +6,7 @@ extends Armas
 var atacando := false
 var ja_deu_dano := []
 
-@export var dano: int = 6
+@export var dano = Global.dano_espada
 
 
 func atacar():

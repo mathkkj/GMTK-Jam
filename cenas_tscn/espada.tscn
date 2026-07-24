@@ -67,7 +67,7 @@ animation = &"normal"
 autoplay = "normal"
 
 [node name="hitbox" type="Area2D" parent="." unique_id=66876000 groups=["espada"]]
-collision_layer = 3
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=375386879 groups=["espada"]]
 position = Vector2(18, -4)

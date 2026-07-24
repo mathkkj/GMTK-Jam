@@ -46,10 +46,13 @@ size = Vector2(42.000004, 45.000008)
 size = Vector2(56.000008, 53.000008)
 
 [node name="Inimigos_3" type="CharacterBody2D" unique_id=760428623 groups=["inimigos"]]
+collision_layer = 2
+collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_kokla")
 vida = 24
-velocidade = 100.0
+tempo = 8
+velocidade = 75.0
 dano = 20
 forca_knockback = 500.0
 atrito_knockback = 2000.0

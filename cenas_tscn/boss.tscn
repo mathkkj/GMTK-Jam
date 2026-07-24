@@ -1,0 +1,80 @@
+[gd_scene format=3 uid="uid://l6ic7s11lfsa"]
+
+[ext_resource type="Script" uid="uid://dmkwbj02sdyj0" path="res://codigo_gd/boss.gd" id="1_t5x0m"]
+[ext_resource type="Texture2D" uid="uid://cs6i1ofuasr8s" path="res://sprites/Boss.png" id="2_1qm06"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p4v2j"]
+atlas = ExtResource("2_1qm06")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wddkl"]
+atlas = ExtResource("2_1qm06")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_orke3"]
+atlas = ExtResource("2_1qm06")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8t7m"]
+atlas = ExtResource("2_1qm06")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bhunq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p4v2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wddkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_orke3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8t7m")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
+size = Vector2(20, 45)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_riqys"]
+size = Vector2(42, 62)
+
+[node name="Boss" type="CharacterBody2D" unique_id=1860796647]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_t5x0m")
+vida = 250
+velocidade = 100.0
+dano = 15
+metadata/_custom_type_script = "uid://c6nhix12qwwft"
+
+[node name="Timer" type="Timer" parent="." unique_id=585502057]
+wait_time = 1.5
+autostart = true
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=107517976]
+sprite_frames = SubResource("SpriteFrames_bhunq")
+autoplay = "default"
+frame_progress = 0.2887742
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=643221166 groups=["inimigos"]]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_bhunq")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1904943423]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1458209457 groups=["inimigos"]]
+shape = SubResource("RectangleShape2D_riqys")
+
+[node name="dano_continuo" type="Timer" parent="." unique_id=906515670]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="dano_continuo" to="." method="_on_dano_continuo_timeout"]

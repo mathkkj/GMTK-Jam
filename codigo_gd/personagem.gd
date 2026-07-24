@@ -36,6 +36,7 @@ var estado_atual: EstadoJogador = EstadoJogador.Normal
 
 func _ready():
 	Global.player = self
+	Global.tempo = 30
 	atualizar_arma()
 
 func atualizar_arma():
@@ -110,17 +111,17 @@ func _physics_process(delta: float) -> void:
 			
 			
 			# iniciar dash se puder
-			if Input.is_action_just_pressed("dash") and pode_dash:
-				estado_atual = EstadoJogador.Dashing
-				invencivel = true
-				tempo_dash = DASH_TIMER
-				pode_dash = false
-				# desativar a hitbox durante dash
-				hitbox.set_deferred("monitoring", false)
-				hitbox.set_deferred("monitorable", false)
-				set_collision_mask_value(1, false)
-				set_collision_layer_value(1, false)
-				dash_dir = direcao.normalized()
+			#if Input.is_action_just_pressed("dash") and pode_dash:
+				#estado_atual = EstadoJogador.Dashing
+				#invencivel = true
+				#tempo_dash = DASH_TIMER
+				#pode_dash = false
+				## desativar a hitbox durante dash
+				#hitbox.set_deferred("monitoring", false)
+				#hitbox.set_deferred("monitorable", false)
+				#set_collision_mask_value(1, false)
+				#set_collision_layer_value(1, false)
+				#dash_dir = direcao.normalized()
 		
 		EstadoJogador.Dashing:
 			# dash mecanicas
@@ -143,6 +144,15 @@ func _physics_process(delta: float) -> void:
 		if recarregar_tempo_dash <= 0:
 			pode_dash = true
 
+
+
+
+	if Global.tempo <= 0:
+		$CanvasLayer/Fundo.visible = true
+		$CanvasLayer/Fundo/VBoxContainer/Restart.grab_focus()
+		get_tree().paused = true
+	
+	
 	move_and_slide()
 
 func receber_dano(dano, direcao_knockback, forca_knockback):

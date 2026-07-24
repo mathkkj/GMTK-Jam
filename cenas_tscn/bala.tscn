@@ -13,6 +13,7 @@ script = ExtResource("1_ag3k0")
 texture = ExtResource("2_tqo1u")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1215106603 groups=["bala"]]
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=988331074 groups=["bala"]]
 position = Vector2(0, 1)
