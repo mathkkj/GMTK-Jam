@@ -4,9 +4,7 @@
 [ext_resource type="Script" uid="uid://dpwi8fkw3dtta" path="res://codigo_gd/camera_2d.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://ddku84syeac2p" path="res://codigo_gd/global.gd" id="1_q6r6c"]
 [ext_resource type="Texture2D" uid="uid://b54moo2eccnp6" path="res://icon.svg" id="2_d21ai"]
-[ext_resource type="Script" uid="uid://d0kbebn2m8rqt" path="res://codigo_gd/canvaslayer.gd" id="5_kdubu"]
 [ext_resource type="Script" uid="uid://ls2rm1g8c0ei" path="res://codigo_gd/waves.gd" id="6_d21ai"]
-[ext_resource type="Script" uid="uid://bye3t7yqsudvi" path="res://codigo_gd/label.gd" id="6_kdubu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bhunq"]
 size = Vector2(551, 17)
@@ -39,14 +37,6 @@ script = ExtResource("1_epypp")
 personagem = NodePath("../player")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=240291162]
-script = ExtResource("5_kdubu")
-
-[node name="tempo" type="Label" parent="CanvasLayer" unique_id=531325995]
-offset_right = 90.0
-offset_bottom = 23.0
-size_flags_horizontal = 4
-text = "timer: "
-script = ExtResource("6_kdubu")
 
 [node name="arma" type="Label" parent="CanvasLayer" unique_id=171101099]
 offset_left = 4.0
