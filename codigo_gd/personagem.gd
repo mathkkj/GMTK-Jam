@@ -11,9 +11,9 @@ extends CharacterBody2D
 @onready var colisao = get_node("CollisionShape2D")
 
 
-
 @onready var sprite = get_node("sprite")
 @onready var hitbox = get_node("hitbox")
+
 
 #dash
 var pode_dash: bool = true
@@ -35,6 +35,7 @@ enum EstadoJogador { Normal, Dashing }
 var estado_atual: EstadoJogador = EstadoJogador.Normal
 
 func _ready():
+	Global.player = self
 	atualizar_arma()
 
 func atualizar_arma():
@@ -69,6 +70,21 @@ func atualizar_animacao():
 		sprite.play(tipo_animacao + "_cima")
 	else:
 		sprite.play(tipo_animacao + "_baixo")
+
+
+#var ultima_direcao := "baixo"
+#func atualizar_animacao():
+	#var tipo_animacao = "idle"
+#
+	#if velocity.length() > 0:
+		#tipo_animacao = "andar"
+#
+		#if velocity.y < 0:
+			#ultima_direcao = "cima"
+		#elif velocity.y > 0:
+			#ultima_direcao = "baixo"
+#
+	#sprite.play(tipo_animacao + "_" + ultima_direcao)
 
 func _physics_process(delta: float) -> void:
 	

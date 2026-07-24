@@ -3,10 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://b8243cheofnhi" path="res://cenas_tscn/player.tscn" id="1_0hol4"]
 [ext_resource type="Script" uid="uid://dpwi8fkw3dtta" path="res://codigo_gd/camera_2d.gd" id="1_epypp"]
 [ext_resource type="Script" uid="uid://ddku84syeac2p" path="res://codigo_gd/global.gd" id="1_q6r6c"]
-[ext_resource type="PackedScene" uid="uid://co4j3hdsx53v1" path="res://cenas_tscn/inimigo.tscn" id="4_q6r6c"]
 [ext_resource type="Script" uid="uid://d0kbebn2m8rqt" path="res://codigo_gd/canvaslayer.gd" id="5_kdubu"]
+[ext_resource type="Script" uid="uid://ls2rm1g8c0ei" path="res://codigo_gd/waves.gd" id="6_d21ai"]
 [ext_resource type="Script" uid="uid://bye3t7yqsudvi" path="res://codigo_gd/label.gd" id="6_kdubu"]
-[ext_resource type="PackedScene" uid="uid://v6n0qmfibyvh" path="res://cenas_tscn/inimigos_projetil.tscn" id="7_d21ai"]
 
 [node name="Node2D" type="Node2D" unique_id=2017904224]
 script = ExtResource("1_q6r6c")
@@ -37,7 +36,5 @@ offset_right = 44.0
 offset_bottom = 269.0
 text = "sla"
 
-[node name="inimigo" parent="." unique_id=2100569929 instance=ExtResource("4_q6r6c")]
-
-[node name="Inimigos_projetil" parent="." unique_id=403934164 instance=ExtResource("7_d21ai")]
-position = Vector2(-145, 14)
+[node name="Marker2D" type="Marker2D" parent="." unique_id=40708363]
+script = ExtResource("6_d21ai")

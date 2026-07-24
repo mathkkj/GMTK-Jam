@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Inimigos
 
-@onready var alvo = get_parent().get_node("player")
+@onready var alvo: CharacterBody2D = get_parent().get_node("player")
 @onready var sprite = get_node("sprite")
 @onready var hurtbox = get_node("hurtbox")
 @export var vida = 12
@@ -20,7 +20,17 @@ var tomando_knockback := false
 var pode_dar_dano := true
 
 
+func _ready():
+	add_to_group("inimigos")
+
 func _physics_process(delta):
+	
+
+	if alvo == null:
+		alvo = Global.player
+		
+		return
+
 	#knockback
 	if tomando_knockback:
 		knockback = knockback.move_toward(

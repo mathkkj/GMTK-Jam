@@ -47,6 +47,7 @@ size = Vector2(34.000004, 36.000004)
 
 [node name="inimigo" type="CharacterBody2D" unique_id=2100569929 groups=["inimigos"]]
 motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_0b8xr")
 vida = 18
 

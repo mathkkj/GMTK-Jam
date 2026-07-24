@@ -47,6 +47,7 @@ size = Vector2(34, 36.000004)
 
 [node name="Inimigos_projetil" type="CharacterBody2D" unique_id=403934164 groups=["inimigos"]]
 motion_mode = 1
+wall_min_slide_angle = 0.0
 script = ExtResource("1_g53b7")
 dano = 5
 metadata/_custom_type_script = "uid://c6nhix12qwwft"
@@ -76,3 +77,4 @@ autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]
+[connection signal="timeout" from="dano_continuo" to="." method="_on_dano_continuo_timeout"]
