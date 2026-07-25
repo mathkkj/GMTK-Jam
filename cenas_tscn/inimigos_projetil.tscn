@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxmjpsfe3eim6" path="res://codigo_gd/inimigos_projetil.gd" id="1_g53b7"]
 [ext_resource type="Texture2D" uid="uid://wytx3tfj2hiv" path="res://sprites/Enemy2-Sheet.png" id="2_7huev"]
+[ext_resource type="Texture2D" uid="uid://dhne402hxktc0" path="res://sprites/Bullet.png" id="2_sphdh"]
 [ext_resource type="AudioStream" uid="uid://d3glnqaixnla1" path="res://sons/Damage.mp3" id="3_bf3wh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mw4x8"]
@@ -58,7 +59,15 @@ velocidade = 120.0
 dano = 5
 metadata/_custom_type_script = "uid://c6nhix12qwwft"
 
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1135674874]
+modulate = Color(0, 0, 0, 0.69803923)
+z_index = -1
+position = Vector2(2, 12)
+scale = Vector2(1.74, 0.715)
+texture = ExtResource("2_sphdh")
+
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=185527856]
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 
 [node name="Timer" type="Timer" parent="." unique_id=94053198]
@@ -83,6 +92,7 @@ autostart = true
 
 [node name="Damage" type="AudioStreamPlayer" parent="." unique_id=1962567925]
 stream = ExtResource("3_bf3wh")
+volume_db = -10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

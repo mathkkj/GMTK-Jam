@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b2hqotwsnjlxt" path="res://codigo_gd/revolver.gd" id="1_uya3a"]
 [ext_resource type="Texture2D" uid="uid://dyehiep3mjhlx" path="res://sprites/Gun.png" id="2_bftl6"]
+[ext_resource type="AudioStream" uid="uid://bk2wqpspo64u0" path="res://sons/Shot.mp3" id="3_f3ss8"]
 
 [node name="arma" type="Node2D" unique_id=1898825399 groups=["player"]]
 script = ExtResource("1_uya3a")
@@ -13,3 +14,7 @@ texture = ExtResource("2_bftl6")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=2135042384]
 position = Vector2(24, -5)
+
+[node name="Shot" type="AudioStreamPlayer" parent="." unique_id=509872289]
+stream = ExtResource("3_f3ss8")
+volume_db = -10.0

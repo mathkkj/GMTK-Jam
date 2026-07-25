@@ -29,12 +29,14 @@ sources/0 = SubResource("TileSetAtlasSource_rj586")
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ir8iy"]
 noise = SubResource("FastNoiseLite_hqns4")
 seamless = true
+normalize = false
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_6f8o3"]
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sn0t7"]
 generate_mipmaps = false
 noise = SubResource("FastNoiseLite_6f8o3")
+normalize = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_riqys"]
 shader = ExtResource("3_rj586")

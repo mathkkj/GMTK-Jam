@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://diipovpujq7se"]
 
 [ext_resource type="Script" uid="uid://bq2pq6qi28ydv" path="res://codigo_gd/inimigos_da_mais_dano.gd" id="1_kokla"]
+[ext_resource type="Texture2D" uid="uid://dhne402hxktc0" path="res://sprites/Bullet.png" id="2_m7k6m"]
 [ext_resource type="Texture2D" uid="uid://dfcabj0465vhy" path="res://sprites/Enemy3-Sheet.png" id="2_qdvqk"]
 [ext_resource type="AudioStream" uid="uid://d3glnqaixnla1" path="res://sons/Damage.mp3" id="3_qdvqk"]
 
@@ -59,17 +60,27 @@ forca_knockback = 500.0
 atrito_knockback = 2000.0
 metadata/_custom_type_script = "uid://c6nhix12qwwft"
 
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1656351168]
+modulate = Color(0, 0, 0, 0.69803923)
+z_index = -1
+position = Vector2(-1.9999999, 21.000002)
+scale = Vector2(3.56, 1.39)
+texture = ExtResource("2_m7k6m")
+
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1775524598]
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_ir4a2")
 animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=846989147 groups=["inimigos"]]
+visible = false
 position = Vector2(-0.9999988, 4.5000005)
 scale = Vector2(0.9999999, 0.9999999)
 shape = SubResource("RectangleShape2D_yd575")
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=478634722 groups=["inimigos"]]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=56522935 groups=["inimigos"]]
 position = Vector2(-2.0000007, 3.5000005)

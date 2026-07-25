@@ -18,7 +18,7 @@ extends CharacterBody2D
 #dash
 var pode_dash: bool = true
 var tempo_dash: float = 0.0
-var recarregar_tempo_dash: float = 0.0
+var recarregar_tempo_dash: float = Global.dashcooldown
 var dash_dir: Vector2 = Vector2.ZERO
 var invencivel := false
 @export var DASH_TIMER: float = 0.3
@@ -37,6 +37,12 @@ var estado_atual: EstadoJogador = EstadoJogador.Normal
 func _ready():
 	Global.player = self
 	Global.tempo = 30
+	Global.tempo = 30
+	Global.cooldown = 0.5
+	Global.dano_bala = 3
+	Global.dano_espada = 5
+	Global.resistencia = 1
+	Global.dashcooldown = 3.0
 	atualizar_arma()
 
 func atualizar_arma():
@@ -158,7 +164,7 @@ func receber_dano(dano, direcao_knockback, forca_knockback):
 		return
 	$Damage.play()
 	invencivel = true
-	Global.tempo -= dano
+	Global.tempo -= (dano / Global.resistencia)
 	#knockback
 	velocity = direcao_knockback * forca_knockback
 	#efeito pra ficar piscando

@@ -198,7 +198,7 @@ script = ExtResource("1_4flbx")
 velocidade = 200.0
 dash_vel = 500.0
 atrito_dash = 8000.0
-DASH_TIMER = 0.4
+tempo_recarregamento_dash = 3.0
 armas = Array[PackedScene]([ExtResource("3_hqtel"), ExtResource("3_i3pqv")])
 
 [node name="Shadow" type="Sprite2D" parent="." unique_id=473278701]
@@ -212,6 +212,7 @@ position = Vector2(1.4203957e-07, 7.1490855)
 shape = SubResource("RectangleShape2D_yf5fn")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1486974980 groups=["player"]]
+y_sort_enabled = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"andar_baixo"

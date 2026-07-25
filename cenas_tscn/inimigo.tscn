@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c6nhix12qwwft" path="res://codigo_gd/inimigo.gd" id="1_0b8xr"]
 [ext_resource type="Texture2D" uid="uid://c71pt3hf0haws" path="res://sprites/Enemy-Sheet.png" id="2_0b8xr"]
+[ext_resource type="Texture2D" uid="uid://dhne402hxktc0" path="res://sprites/Bullet.png" id="2_xitr7"]
 [ext_resource type="AudioStream" uid="uid://d3glnqaixnla1" path="res://sons/Damage.mp3" id="3_0rnxl"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g45jm"]
@@ -56,7 +57,15 @@ vida = 10
 tempo = 4
 velocidade = 70.0
 
+[node name="Shadow" type="Sprite2D" parent="." unique_id=1932463815]
+modulate = Color(0, 0, 0, 0.69803923)
+z_index = -1
+position = Vector2(0, 12)
+scale = Vector2(1.74, 0.715)
+texture = ExtResource("2_xitr7")
+
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=708171592]
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"idle"
 autoplay = "idle"
