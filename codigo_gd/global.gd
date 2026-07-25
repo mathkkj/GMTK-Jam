@@ -12,6 +12,7 @@ var tempo = 30
 var player : CharacterBody2D
 
 
+
 var cartas = {
 	"Sharpness":{
 		"efeito": func(): aplicar_efeito_card("DanoEspada")
@@ -32,8 +33,7 @@ var cartas = {
 }
 
 
-func _ready() -> void:
-	pass
+
 
 func _physics_process(delta):
 	if tempo > 0:

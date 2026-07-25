@@ -2,6 +2,7 @@ extends Marker2D
 
 var rodando_waves := false
 var wave_atual := 0
+
 var lista_inimigos: Array[PackedScene] = [
 	preload("res://cenas_tscn/inimigo.tscn"),
 	preload("res://cenas_tscn/inimigos_projetil.tscn"),
@@ -213,7 +214,9 @@ func iniciar_wave() -> void:
 			for i in range(quantidade):
 				spawnar(cena)
 				await get_tree().create_timer(delay).timeout
-
+	
+		
+		
 		print("wave concluida, esperando derrotar todos os inimigos")
 
 		# espera ate nao existir mais nenhum inimigo vivo
@@ -223,6 +226,7 @@ func iniciar_wave() -> void:
 		wave_atual += 1
 
 		# pequeno delay antes da proxima wave
+
 		await get_tree().create_timer(1.0).timeout
 
 	print("todas as waves acabaram")
