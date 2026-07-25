@@ -110,18 +110,16 @@ func _physics_process(delta: float) -> void:
 				velocity = velocity.move_toward(Vector2.ZERO, atrito * delta)
 			
 			
-			# iniciar dash se puder
-			#if Input.is_action_just_pressed("dash") and pode_dash:
-				#estado_atual = EstadoJogador.Dashing
-				#invencivel = true
-				#tempo_dash = DASH_TIMER
-				#pode_dash = false
-				## desativar a hitbox durante dash
-				#hitbox.set_deferred("monitoring", false)
-				#hitbox.set_deferred("monitorable", false)
-				#set_collision_mask_value(1, false)
-				#set_collision_layer_value(1, false)
-				#dash_dir = direcao.normalized()
+			 #iniciar dash se puder
+			if Input.is_action_just_pressed("dash") and pode_dash:
+				estado_atual = EstadoJogador.Dashing
+				invencivel = true
+				tempo_dash = DASH_TIMER
+				pode_dash = false
+				# desativar a hitbox durante dash
+				hitbox.set_deferred("monitoring", false)
+				hitbox.set_deferred("monitorable", false)
+				dash_dir = direcao.normalized()
 		
 		EstadoJogador.Dashing:
 			# dash mecanicas
@@ -158,6 +156,7 @@ func _physics_process(delta: float) -> void:
 func receber_dano(dano, direcao_knockback, forca_knockback):
 	if invencivel:
 		return
+	$Damage.play()
 	invencivel = true
 	Global.tempo -= dano
 	#knockback

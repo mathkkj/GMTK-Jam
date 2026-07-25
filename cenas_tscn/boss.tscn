@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dmkwbj02sdyj0" path="res://codigo_gd/boss.gd" id="1_t5x0m"]
 [ext_resource type="Texture2D" uid="uid://cs6i1ofuasr8s" path="res://sprites/Boss.png" id="2_1qm06"]
+[ext_resource type="AudioStream" uid="uid://d3glnqaixnla1" path="res://sons/Damage.mp3" id="3_1qm06"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p4v2j"]
 atlas = ExtResource("2_1qm06")
@@ -75,6 +76,10 @@ shape = SubResource("RectangleShape2D_riqys")
 [node name="dano_continuo" type="Timer" parent="." unique_id=906515670]
 wait_time = 0.5
 autostart = true
+
+[node name="Damage" type="AudioStreamPlayer" parent="." unique_id=1836982647]
+stream = ExtResource("3_1qm06")
+volume_db = -10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="dano_continuo" to="." method="_on_dano_continuo_timeout"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bxmjpsfe3eim6" path="res://codigo_gd/inimigos_projetil.gd" id="1_g53b7"]
 [ext_resource type="Texture2D" uid="uid://wytx3tfj2hiv" path="res://sprites/Enemy2-Sheet.png" id="2_7huev"]
+[ext_resource type="AudioStream" uid="uid://d3glnqaixnla1" path="res://sons/Damage.mp3" id="3_bf3wh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mw4x8"]
 atlas = ExtResource("2_7huev")
@@ -51,6 +52,7 @@ collision_mask = 2
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_g53b7")
+vida = 15
 tempo = 6
 velocidade = 120.0
 dano = 5
@@ -78,6 +80,9 @@ shape = SubResource("RectangleShape2D_7huev")
 [node name="dano_continuo" type="Timer" parent="." unique_id=1232898197]
 wait_time = 0.5
 autostart = true
+
+[node name="Damage" type="AudioStreamPlayer" parent="." unique_id=1962567925]
+stream = ExtResource("3_bf3wh")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="hurtbox" to="." method="_on_hurtbox_body_entered"]

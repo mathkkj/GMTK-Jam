@@ -4,7 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://br4vskyrgyheo" path="res://sprites/MC-Sheet.png" id="2_onrkg"]
 [ext_resource type="PackedScene" uid="uid://cfdwjgx0mqnmt" path="res://cenas_tscn/arma.tscn" id="3_hqtel"]
 [ext_resource type="PackedScene" uid="uid://bqreysdobic5k" path="res://cenas_tscn/espada.tscn" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://dhne402hxktc0" path="res://sprites/Bullet.png" id="4_t5do6"]
 [ext_resource type="Script" uid="uid://c7n5afeyiw6bm" path="res://codigo_gd/control.gd" id="5_uo3cy"]
+[ext_resource type="AudioStream" uid="uid://d3glnqaixnla1" path="res://sons/Damage.mp3" id="7_xrwlx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
 size = Vector2(14.298171, 21.447254)
@@ -194,10 +196,16 @@ scale = Vector2(0.8392682, 0.8392682)
 motion_mode = 1
 script = ExtResource("1_4flbx")
 velocidade = 200.0
-dash_vel = 300.0
+dash_vel = 500.0
 atrito_dash = 8000.0
 DASH_TIMER = 0.4
 armas = Array[PackedScene]([ExtResource("3_hqtel"), ExtResource("3_i3pqv")])
+
+[node name="Shadow" type="Sprite2D" parent="." unique_id=473278701]
+modulate = Color(0.092811875, 0.0009118822, 0.12827906, 0.69803923)
+position = Vector2(0, 16.6812)
+scale = Vector2(1.74, 0.715)
+texture = ExtResource("4_t5do6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=688098043 groups=["player"]]
 position = Vector2(1.4203957e-07, 7.1490855)
@@ -268,4 +276,9 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("5_uo3cy")
 
+[node name="Damage" type="AudioStreamPlayer" parent="." unique_id=1210074071]
+stream = ExtResource("7_xrwlx")
+volume_db = -10.0
+
 [connection signal="pressed" from="CanvasLayer/Fundo/VBoxContainer/Restart" to="Control" method="_on_restart_pressed"]
+[connection signal="pressed" from="CanvasLayer/Fundo/VBoxContainer/Quit" to="Control" method="_on_quit_pressed"]

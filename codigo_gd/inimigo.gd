@@ -59,7 +59,8 @@ func receber_dano(dano_recebido, direcao_knockback, forca):
 	await get_tree().create_timer(0.08).timeout
 	sprite.self_modulate = Color.WHITE
 	empurrar_inimigos_colididos()
-
+	$Damage.pitch_scale = randf_range(0.7,1.3)
+	$Damage.play()
 	if vida <= 0:
 		queue_free()
 		Global.tempo += tempo

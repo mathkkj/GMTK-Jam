@@ -8,6 +8,7 @@ radius = 8.0
 
 [node name="projetil_do_inimigo" type="Node2D" unique_id=728065562]
 script = ExtResource("1_r1kfp")
+dano = 5
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=501385095]
 modulate = Color(0.18815547, 0.00015208113, 0.2556428, 1)
