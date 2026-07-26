@@ -35,6 +35,10 @@ enum EstadoJogador { Normal, Dashing }
 var estado_atual: EstadoJogador = EstadoJogador.Normal
 
 func _ready():
+	Global.transition.emit("in")
+	Musica.menumusic.stop()
+	Musica.wavemusic.play()
+	Global.change_scene = false
 	Global.player = self
 	Global.tempo = 30
 	Global.tempo = 30

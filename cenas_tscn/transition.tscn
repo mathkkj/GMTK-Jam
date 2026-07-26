@@ -1,15 +1,16 @@
 [gd_scene format=3 uid="uid://dakx8fps1ve43"]
 
 [ext_resource type="Shader" uid="uid://drb5nnvw1scl7" path="res://shader/transition.gdshader" id="1_fjv14"]
+[ext_resource type="Script" uid="uid://vh4jr2yyfoxy" path="res://codigo_gd/color_rect.gd" id="2_cthe5"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bhunq"]
 shader = ExtResource("1_fjv14")
 shader_parameter/use_sprite_alpha = true
 shader_parameter/use_transition_texture = false
-shader_parameter/transition_type = 0
-shader_parameter/position = Vector2(0, 0)
+shader_parameter/transition_type = 2
+shader_parameter/position = Vector2(16, 16)
 shader_parameter/invert = false
-shader_parameter/grid_size = Vector2(1, 1)
+shader_parameter/grid_size = Vector2(16, 16)
 shader_parameter/rotation_angle = 0.0
 shader_parameter/global_x_mirror = false
 shader_parameter/global_y_mirror = false
@@ -23,15 +24,16 @@ shader_parameter/flip_frequency = Vector2i(1, 1)
 shader_parameter/basic_feather = 0.0
 shader_parameter/use_mask_size = false
 shader_parameter/mask_size = Vector2(100, 100)
-shader_parameter/edges = 5
-shader_parameter/shape_feather = 0.1
+shader_parameter/edges = 4
+shader_parameter/shape_feather = 0.0
 shader_parameter/sectors = 1
 shader_parameter/clock_feather = 0.0
 shader_parameter/progress = 0.0
-shader_parameter/progress_bias = Vector2(0, 0)
+shader_parameter/progress_bias = Vector2(16, 16)
 
 [sub_resource type="Animation" id="Animation_cthe5"]
 resource_name = "In"
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -39,14 +41,51 @@ tracks/0/path = NodePath("ColorRect:material:shader_parameter/progress")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 0.5),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0, 2.0]
+"values": [40.0, 100.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/invert")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_33vpj"]
 resource_name = "Out"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/invert")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/progress")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [40.0, 100.0]
+}
 
 [sub_resource type="Animation" id="Animation_vqtnh"]
 length = 0.001
@@ -61,6 +100,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:material:shader_parameter/invert")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0o7ed"]
@@ -80,7 +131,11 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
+script = ExtResource("2_cthe5")
 
 [node name="Animation" type="AnimationPlayer" parent="." unique_id=1255873268]
 libraries/ = SubResource("AnimationLibrary_0o7ed")
+
+[connection signal="animation_finished" from="Animation" to="ColorRect" method="_on_animation_animation_finished"]

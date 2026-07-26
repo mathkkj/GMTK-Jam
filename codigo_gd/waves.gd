@@ -184,6 +184,8 @@ var waves := [
 			#
 func _ready() -> void:
 	# espera um frame para garantir que a cena terminou de carregar
+	
+	
 	##fiquei maluco tentando entender pq o primeiro inimigo nao funcionava, mas era pq ele tava instanciando antes do frame inicial tmnc
 	await get_tree().process_frame
 	iniciar_wave()

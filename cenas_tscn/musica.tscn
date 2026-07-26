@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bngqpywr6j4bb"]
+
+[ext_resource type="Script" uid="uid://tls31j6xjebw" path="res://codigo_gd/musica.gd" id="1_13r4a"]
+[ext_resource type="AudioStream" uid="uid://cymolxkocndos" path="res://musica/Void.mp3" id="2_6syka"]
+[ext_resource type="AudioStream" uid="uid://dqqf0aj4rha62" path="res://musica/30Seconds.mp3" id="3_5i6wb"]
+
+[node name="MusicControl" type="Node" unique_id=2092540830]
+script = ExtResource("1_13r4a")
+
+[node name="Musica" type="AudioStreamPlayer" parent="." unique_id=2057437145]
+stream = ExtResource("2_6syka")
+parameters/looping = true
+
+[node name="30Seconds" type="AudioStreamPlayer" parent="." unique_id=1609964436]
+stream = ExtResource("3_5i6wb")
+parameters/looping = true
+
+[node name="Void" type="AudioStreamPlayer" parent="." unique_id=971394164]
+stream = ExtResource("2_6syka")
+parameters/looping = true

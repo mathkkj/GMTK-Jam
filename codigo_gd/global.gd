@@ -11,6 +11,13 @@ var dashcooldown = 3.0
 var tempo = 30
 var player : CharacterBody2D
 
+var musica = "Menu"
+
+var change_scene = false
+signal transition(type:String)
+signal change()
+
+
 
 
 var cartas = {

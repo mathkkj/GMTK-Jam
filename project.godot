@@ -10,15 +10,16 @@ config_version=5
 
 [application]
 
-config/name="GMTK Jam"
-run/main_scene="uid://covp7b2n04uk2"
+config/name="30 Seconds to the End"
+run/main_scene="uid://hnw85d1drxe3"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://t7uc3fhrsoh5"
 
 [autoload]
 
 Global="*uid://ddku84syeac2p"
-Music="*uid://cpelijl8k0pfh"
+Transition="*uid://dakx8fps1ve43"
+Musica="*uid://bngqpywr6j4bb"
 
 [display]
 
