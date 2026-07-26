@@ -69,6 +69,8 @@ texture = ExtResource("2_sphdh")
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=185527856]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_g4v7s")
+autoplay = "default"
+frame_progress = 0.252177
 
 [node name="Timer" type="Timer" parent="." unique_id=94053198]
 wait_time = 1.5

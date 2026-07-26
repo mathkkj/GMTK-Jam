@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bqreysdobic5k" path="res://cenas_tscn/espada.tscn" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://dhne402hxktc0" path="res://sprites/Bullet.png" id="4_t5do6"]
 [ext_resource type="Script" uid="uid://c7n5afeyiw6bm" path="res://codigo_gd/control.gd" id="5_uo3cy"]
+[ext_resource type="FontFile" uid="uid://crnfsj8uy7bl0" path="res://sprites/BoldPixels.ttf" id="6_tw7kf"]
 [ext_resource type="AudioStream" uid="uid://d3glnqaixnla1" path="res://sons/Damage.mp3" id="7_xrwlx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yf5fn"]
@@ -252,6 +253,7 @@ theme_override_constants/separation = 15
 process_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("6_tw7kf")
 theme_override_font_sizes/font_size = 30
 text = "Failure"
 
@@ -260,6 +262,7 @@ process_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_tw7kf")
 text = "Restart"
 
 [node name="Quit" type="Button" parent="CanvasLayer/Fundo/VBoxContainer" unique_id=1659899615]
@@ -267,6 +270,7 @@ process_mode = 2
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_tw7kf")
 text = "Quit"
 
 [node name="Control" type="Control" parent="." unique_id=141021441]

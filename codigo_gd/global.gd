@@ -2,11 +2,11 @@ extends Node2D
 
 @onready var area_spawn: Node2D = $SpawnInimigo
 
-var cooldown = 0.5
-var dano_bala = 3
-var dano_espada = 5
-var resistencia = 1
-var dashcooldown = 3.0
+var cooldown : float
+var dano_bala : int
+var dano_espada : int
+var resistencia : int
+var dashcooldown : float
 
 var tempo = 30
 var player : CharacterBody2D

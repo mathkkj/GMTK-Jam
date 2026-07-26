@@ -1,6 +1,8 @@
 extends CharacterBody2D
 class_name Inimigos
 
+@onready var cena_particula = preload("res://cenas_tscn/particula.tscn")
+
 @onready var alvo: CharacterBody2D = get_parent().get_node("player")
 @onready var sprite = get_node("sprite")
 @onready var hurtbox = get_node("hurtbox")
@@ -55,16 +57,19 @@ func receber_dano(dano_recebido, direcao_knockback, forca):
 	vida -= dano_recebido
 	knockback = direcao_knockback.normalized() * forca
 	tomando_knockback = true
+	
 	sprite.self_modulate = Color(5, 5, 5)
 	await get_tree().create_timer(0.08).timeout
 	sprite.self_modulate = Color.WHITE
+	
 	empurrar_inimigos_colididos()
-	$Damage.pitch_scale = randf_range(0.7,1.3)
+
+	$Damage.pitch_scale = randf_range(0.7, 1.3)
 	$Damage.play()
+
 	if vida <= 0:
 		queue_free()
 		Global.tempo += tempo
-
 
 
 func _on_hurtbox_body_entered(body):

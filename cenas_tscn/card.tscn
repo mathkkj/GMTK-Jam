@@ -46,12 +46,18 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Card" type="AnimatedSprite2D" unique_id=1541227762]
+[node name="Control" type="Control" unique_id=1643826338]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Card" type="AnimatedSprite2D" parent="." unique_id=1541227762]
 scale = Vector2(2.7, 2.7)
 sprite_frames = SubResource("SpriteFrames_bhunq")
 script = ExtResource("2_pyp4p")
 
-[node name="Card" type="TextureButton" parent="." unique_id=2130577890]
+[node name="Card" type="TextureButton" parent="Card" unique_id=2130577890]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -65,6 +71,6 @@ pivot_offset = Vector2(17, 25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[connection signal="mouse_entered" from="Card" to="." method="_on_card_mouse_entered"]
-[connection signal="mouse_exited" from="Card" to="." method="_on_card_mouse_exited"]
-[connection signal="pressed" from="Card" to="." method="_on_card_pressed"]
+[connection signal="mouse_entered" from="Card/Card" to="Card" method="_on_card_mouse_entered"]
+[connection signal="mouse_exited" from="Card/Card" to="Card" method="_on_card_mouse_exited"]
+[connection signal="pressed" from="Card/Card" to="Card" method="_on_card_pressed"]

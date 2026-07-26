@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://r276hlhbqx2i"]
+
+[ext_resource type="Shader" uid="uid://cgjejt0f4tu3n" path="res://shader/background.gdshader" id="1_8336f"]
+[ext_resource type="Script" uid="uid://clp2tkbyhvqre" path="res://codigo_gd/credits.gd" id="1_qyelx"]
+[ext_resource type="FontFile" uid="uid://crnfsj8uy7bl0" path="res://sprites/BoldPixels.ttf" id="3_kjsrn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qyelx"]
+shader = ExtResource("1_8336f")
+shader_parameter/lineas = 255
+shader_parameter/velocidad = 0.1
+shader_parameter/ondulacion = 0.19
+shader_parameter/frecuencia = 5.0
+shader_parameter/color_a = Color(0.28975996, 0.2336, 0.32, 1)
+shader_parameter/color_b = Color(0.079, 0.079, 0.1, 1)
+
+[node name="credits" type="Control" unique_id=1989754148]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qyelx")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1316961430]
+material = SubResource("ShaderMaterial_qyelx")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=67762686]
+custom_minimum_size = Vector2(200, 200)
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_scale = Vector2(2.855, 2.855)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer" unique_id=717301329]
+custom_minimum_size = Vector2(200, 200)
+custom_maximum_size = Vector2(200, 200)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_kjsrn")
+text = "acknowledgments:
+
+@ishisahh
+@mathiidev
+@Uwowouxy
+aoed22.itch.io"
+horizontal_alignment = 1
+vertical_alignment = 1

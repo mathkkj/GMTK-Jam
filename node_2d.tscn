@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://d0kbebn2m8rqt" path="res://codigo_gd/canvaslayer.gd" id="5_kdubu"]
 [ext_resource type="Script" uid="uid://ls2rm1g8c0ei" path="res://codigo_gd/waves.gd" id="6_d21ai"]
 [ext_resource type="Script" uid="uid://bye3t7yqsudvi" path="res://codigo_gd/label.gd" id="6_kdubu"]
+[ext_resource type="FontFile" uid="uid://crnfsj8uy7bl0" path="res://sprites/BoldPixels.ttf" id="7_ir8iy"]
+[ext_resource type="Texture2D" uid="uid://dyehiep3mjhlx" path="res://sprites/Gun.png" id="9_hqns4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rj586"]
 texture = ExtResource("2_d21ai")
@@ -74,10 +76,10 @@ material = SubResource("ShaderMaterial_riqys")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -32.0
-offset_top = -33.0
-offset_right = 512.0
-offset_bottom = 320.0
+offset_left = -35.0
+offset_top = -35.0
+offset_right = 509.0
+offset_bottom = 318.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -101,18 +103,55 @@ personagem = NodePath("../player")
 script = ExtResource("5_kdubu")
 
 [node name="tempo" type="Label" parent="CanvasLayer" unique_id=531325995]
-offset_right = 90.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_right = 45.0
 offset_bottom = 23.0
+grow_horizontal = 2
 size_flags_horizontal = 4
-text = "timer: "
+theme_override_fonts/font = ExtResource("7_ir8iy")
+text = "0"
+horizontal_alignment = 1
 script = ExtResource("6_kdubu")
 
-[node name="arma" type="Label" parent="CanvasLayer" unique_id=171101099]
-offset_left = 4.0
-offset_top = 246.0
-offset_right = 44.0
-offset_bottom = 269.0
-text = "sla"
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=1280786631]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 150
+alignment = 1
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer" unique_id=2022930425]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 78.0
+grow_vertical = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+offset_transform_position = Vector2(10, 0)
+accessibility_region = true
+alignment = 1
+
+[node name="arma" type="Label" parent="CanvasLayer/HBoxContainer2" unique_id=171101099]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_ir8iy")
+theme_override_font_sizes/font_size = 32
+text = "gun"
+justification_flags = 161
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/HBoxContainer2" unique_id=932851907]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("9_hqns4")
 
 [node name="Marker2D" type="Marker2D" parent="." unique_id=40708363]
 position = Vector2(239, -53)

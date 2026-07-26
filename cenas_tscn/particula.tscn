@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://fcb817aqc4qq"]
+
+[ext_resource type="Script" uid="uid://c37la5723hb7e" path="res://codigo_gd/particula.gd" id="1_h6ra3"]
+
+[sub_resource type="Curve" id="Curve_yf5fn"]
+_limits = [1.0, 6.0, 0.0, 1.0]
+_data = [Vector2(0, 2.9662914), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_g4v7s"]
+colors = PackedColorArray(0.386473, 2.9961393e-06, 0.25725982, 1, 0.3882353, 0, 0.25882354, 0)
+
+[node name="Node2D" type="Node2D" unique_id=422616764]
+script = ExtResource("1_h6ra3")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=2085288087]
+emitting = false
+amount = 16
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+scale_amount_curve = SubResource("Curve_yf5fn")
+color_ramp = SubResource("Gradient_g4v7s")

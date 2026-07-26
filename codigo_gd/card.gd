@@ -1,5 +1,6 @@
 extends AnimatedSprite2D
 
+signal carta_escolhida
 
 var carta = Global.cartas.keys().pick_random()
 # Called when the node enters the scene tree for the first time.
@@ -44,3 +45,4 @@ func _on_card_pressed() -> void:
 
 		"Patience":
 			Global.cartas["Patience"]["efeito"].call()
+	emit_signal("carta_escolhida")
