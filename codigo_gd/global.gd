@@ -17,29 +17,28 @@ var change_scene = false
 signal transition(type:String)
 signal change()
 
-
-
-
 var cartas = {
 	"Sharpness":{
-		"efeito": func(): aplicar_efeito_card("DanoEspada")
-		},
+		"efeito": func(): aplicar_efeito_card("DanoEspada"),
+		"descricao": "Increases sword damage by +2."
+	},
 	"Agility":{
-		"efeito": func(): aplicar_efeito_card("Dash")
-		},
+		"efeito": func(): aplicar_efeito_card("Dash"),
+		"descricao": "Reduces dash cooldown by half."
+	},
 	"Drilling":{
-		"efeito": func(): aplicar_efeito_card("DanoBala")
-		},
+		"efeito": func(): aplicar_efeito_card("DanoBala"),
+		"descricao": "Increases bullet damage by +1."
+	},
 	"Resistance":{
-		"efeito": func(): aplicar_efeito_card("Resistencia")
-		},
+		"efeito": func(): aplicar_efeito_card("Resistencia"),
+		"descricao": "Increases your resistance against damage."
+	},
 	"Patience":{
-		"efeito": func(): aplicar_efeito_card("MaisTempo")
-		}
-		
+		"efeito": func(): aplicar_efeito_card("MaisTempo"),
+		"descricao": "Adds 30 more seconds to the match timer."
+	}
 }
-
-
 
 
 func _physics_process(delta):

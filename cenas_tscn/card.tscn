@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://c7xlgdde80udt" path="res://sprites/Cards/Cards-Sheet.png" id="1_jidjn"]
 [ext_resource type="Script" uid="uid://b7ytwb421nfr2" path="res://codigo_gd/card.gd" id="2_pyp4p"]
+[ext_resource type="FontFile" uid="uid://crnfsj8uy7bl0" path="res://sprites/BoldPixels.ttf" id="3_pyp4p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pyp4p"]
 atlas = ExtResource("1_jidjn")
@@ -70,6 +71,22 @@ grow_vertical = 2
 pivot_offset = Vector2(17, 25)
 size_flags_horizontal = 4
 size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="desc" type="RichTextLabel" parent="Card" unique_id=1043749391]
+visible = false
+visibility_layer = 7
+z_index = 1
+offset_right = 58.76543
+offset_bottom = 25.185184
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0.3513897, 1.5209317e-05, 0.2807755, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/normal_font = ExtResource("3_pyp4p")
+theme_override_font_sizes/normal_font_size = 8
+text = "Increases sword damage by +2."
+tab_size = 8
+justification_flags = 162
 
 [connection signal="mouse_entered" from="Card/Card" to="Card" method="_on_card_mouse_entered"]
 [connection signal="mouse_exited" from="Card/Card" to="Card" method="_on_card_mouse_exited"]

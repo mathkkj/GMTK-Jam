@@ -20,145 +20,145 @@ var waves := [
 			{"tipo": 0, "quantidade": 3}
 		]
 	},
-	#{
-		#"tempo_entre_spawns": 1.5,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 5}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 1.5,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 7}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 1.5,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 9}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 1.5,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 5},
-			#{"tipo": 1, "quantidade": 3}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 1.0,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 4},
-			#{"tipo": 1, "quantidade": 4}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 1.0,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 6},
-			#{"tipo": 1, "quantidade": 4}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 1.0,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 6},
-			#{"tipo": 1, "quantidade": 8}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 1.0,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 7},
-			#{"tipo": 1, "quantidade": 7}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 1.0,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 4},
-			#{"tipo": 1, "quantidade": 4},
-			#{"tipo": 2, "quantidade": 1}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 0.7,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 5},
-			#{"tipo": 1, "quantidade": 5},
-			#{"tipo": 2, "quantidade": 1}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 0.7,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 8},
-			#{"tipo": 1, "quantidade": 5},
-			#{"tipo": 2, "quantidade": 2}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 0.7,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 9},
-			#{"tipo": 1, "quantidade": 6},
-			#{"tipo": 2, "quantidade": 2}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 0.7,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 10},
-			#{"tipo": 1, "quantidade": 5},
-			#{"tipo": 2, "quantidade": 4}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 0.7,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 5},
-			#{"tipo": 1, "quantidade": 10},
-			#{"tipo": 2, "quantidade": 4}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 0.5,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 6},
-			#{"tipo": 1, "quantidade": 6},
-			#{"tipo": 2, "quantidade": 6}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 0.5,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 8},
-			#{"tipo": 1, "quantidade": 8},
-			#{"tipo": 2, "quantidade": 6}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 0.5,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 9},
-			#{"tipo": 1, "quantidade": 9},
-			#{"tipo": 2, "quantidade": 8}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 0.5,
-		#"inimigos": [
-			#{"tipo": 0, "quantidade": 10},
-			#{"tipo": 1, "quantidade": 10},
-			#{"tipo": 2, "quantidade": 8}
-		#]
-	#},
-	#{
-		#"tempo_entre_spawns": 0.5,
-		#"inimigos": [
-			#{"tipo": 3, "quantidade": 1}
-		#]
-	#}
+	{
+		"tempo_entre_spawns": 1.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 5}
+		]
+	},
+	{
+		"tempo_entre_spawns": 1.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 7}
+		]
+	},
+	{
+		"tempo_entre_spawns": 1.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 9}
+		]
+	},
+	{
+		"tempo_entre_spawns": 1.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 5},
+			{"tipo": 1, "quantidade": 3}
+		]
+	},
+	{
+		"tempo_entre_spawns": 1.0,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 4},
+			{"tipo": 1, "quantidade": 4}
+		]
+	},
+	{
+		"tempo_entre_spawns": 1.0,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 6},
+			{"tipo": 1, "quantidade": 4}
+		]
+	},
+	{
+		"tempo_entre_spawns": 1.0,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 6},
+			{"tipo": 1, "quantidade": 8}
+		]
+	},
+	{
+		"tempo_entre_spawns": 1.0,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 7},
+			{"tipo": 1, "quantidade": 7}
+		]
+	},
+	{
+		"tempo_entre_spawns": 1.0,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 4},
+			{"tipo": 1, "quantidade": 4},
+			{"tipo": 2, "quantidade": 1}
+		]
+	},
+	{
+		"tempo_entre_spawns": 0.7,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 5},
+			{"tipo": 1, "quantidade": 5},
+			{"tipo": 2, "quantidade": 1}
+		]
+	},
+	{
+		"tempo_entre_spawns": 0.7,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 8},
+			{"tipo": 1, "quantidade": 5},
+			{"tipo": 2, "quantidade": 2}
+		]
+	},
+	{
+		"tempo_entre_spawns": 0.7,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 9},
+			{"tipo": 1, "quantidade": 6},
+			{"tipo": 2, "quantidade": 2}
+		]
+	},
+	{
+		"tempo_entre_spawns": 0.7,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 10},
+			{"tipo": 1, "quantidade": 5},
+			{"tipo": 2, "quantidade": 4}
+		]
+	},
+	{
+		"tempo_entre_spawns": 0.7,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 5},
+			{"tipo": 1, "quantidade": 10},
+			{"tipo": 2, "quantidade": 4}
+		]
+	},
+	{
+		"tempo_entre_spawns": 0.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 6},
+			{"tipo": 1, "quantidade": 6},
+			{"tipo": 2, "quantidade": 6}
+		]
+	},
+	{
+		"tempo_entre_spawns": 0.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 8},
+			{"tipo": 1, "quantidade": 8},
+			{"tipo": 2, "quantidade": 6}
+		]
+	},
+	{
+		"tempo_entre_spawns": 0.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 9},
+			{"tipo": 1, "quantidade": 9},
+			{"tipo": 2, "quantidade": 8}
+		]
+	},
+	{
+		"tempo_entre_spawns": 0.5,
+		"inimigos": [
+			{"tipo": 0, "quantidade": 10},
+			{"tipo": 1, "quantidade": 10},
+			{"tipo": 2, "quantidade": 8}
+		]
+	},
+	{
+		"tempo_entre_spawns": 0.5,
+		"inimigos": [
+			{"tipo": 3, "quantidade": 1}
+		]
+	}
 ]
 
 func _ready() -> void:
