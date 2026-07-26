@@ -7,7 +7,8 @@ var tween_desc: Tween
 var carta = Global.cartas.keys().pick_random()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
+	var tween = create_tween()
+	tween.tween_property(self,"scale",Vector2(2.7,2.7),0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO)
 	print(carta)
 	desc.text = Global.cartas[carta]["descricao"]
 

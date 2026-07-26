@@ -2,6 +2,7 @@ extends Control
 
 func _ready() -> void:
 	Global.transition.emit("in")
+	Musica.wavemusic.stop()
 	Musica.menumusic.play()
 
 func _input(event: InputEvent) -> void:

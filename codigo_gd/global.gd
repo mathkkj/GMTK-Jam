@@ -49,6 +49,7 @@ func _physics_process(delta):
 		tempo = 0
 
 func aplicar_efeito_card(efeito: String):
+	Musica.sfxcard.play()
 	match efeito:
 		"DanoEspada":
 			print("aumentei 2 na espada")

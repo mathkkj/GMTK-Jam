@@ -122,6 +122,7 @@ _data = {
 }
 
 [node name="Transition" type="CanvasLayer" unique_id=1524394784]
+process_mode = 3
 layer = 5
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1947086650]
