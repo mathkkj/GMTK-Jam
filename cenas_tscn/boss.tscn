@@ -71,7 +71,7 @@ autostart = true
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_bhunq")
 autoplay = "default"
-frame_progress = 0.2887742
+frame_progress = 0.8191416
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=643221166 groups=["inimigos"]]
 position = Vector2(0, -2.5)

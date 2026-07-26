@@ -7,6 +7,7 @@ var tween_desc: Tween
 var carta = Global.cartas.keys().pick_random()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+
 	print(carta)
 	desc.text = Global.cartas[carta]["descricao"]
 
@@ -39,7 +40,7 @@ func _on_card_pressed() -> void:
 	match carta:
 		"Sharpness":
 			Global.cartas["Sharpness"]["efeito"].call()
-
+			
 		"Agility":
 			Global.cartas["Agility"]["efeito"].call()
 
@@ -51,6 +52,8 @@ func _on_card_pressed() -> void:
 
 		"Patience":
 			Global.cartas["Patience"]["efeito"].call()
+
+
 	emit_signal("carta_escolhida")
 	
 func mostrar_descricao() -> void:

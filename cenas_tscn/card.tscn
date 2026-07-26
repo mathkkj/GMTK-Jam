@@ -59,6 +59,7 @@ sprite_frames = SubResource("SpriteFrames_bhunq")
 script = ExtResource("2_pyp4p")
 
 [node name="Card" type="TextureButton" parent="Card" unique_id=2130577890]
+z_index = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5

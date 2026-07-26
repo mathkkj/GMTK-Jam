@@ -51,12 +51,21 @@ func _physics_process(delta):
 func aplicar_efeito_card(efeito: String):
 	match efeito:
 		"DanoEspada":
+			print("aumentei 2 na espada")
+
 			dano_espada += 2
 		"Resistencia":
+			print("aumentei 0.2 na resistencia")
+
 			resistencia += 0.2
 		"Dash":
+			print("diminui na metade o cooldown do dash")
+
 			dashcooldown /=2
 		"DanoBala":
 			dano_bala +=1
+			print("adicionei +1 no dano da bala")
+
 		"MaisTempo":
 			tempo += 30
+			print("adicionei tempo")

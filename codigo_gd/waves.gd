@@ -227,13 +227,15 @@ func mostrar_cartas() -> void:
 	var chaves = Global.cartas.keys()
 	chaves.shuffle()
 	#instancia
-	for chave in 3:
+	for i in range(min(3, chaves.size())):
 		var carta = cena_carta.instantiate()
 		spawn_carta.add_child(carta)
 
-		carta.get_child(0).carta = chave
+		carta.get_child(0).carta = chaves[i]
+		# atualizar desc
+		carta.get_child(0)._ready()
 		carta.get_child(0).carta_escolhida.connect(_on_carta_escolhida)
-		#pausa menos as carta (bota dps pra n pausa musica tb)
+
 		Musica.process_mode = Node.PROCESS_MODE_ALWAYS
 		carta.process_mode = Node.PROCESS_MODE_ALWAYS
 	
